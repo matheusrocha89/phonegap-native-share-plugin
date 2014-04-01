@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.twonott.plugins.native_share"
+      version="1.0">
+    <name>Native Share Plugin</name>
+    <description>Plugin to call the native share feature of Android and iOS</description>
+    <!-- Pesquisar -->
+    <license>Apache 2.0</license>
+    <keywords>share, native share</keywords>
+
+
+    <js-module src="www/native_share.js" name="NativeShare">
+        <clobbers target="NativeShare" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NativeShare">
+                <param name="android-package" value="com.twonott.plugins.native_share.NativeShare"/>
+            </feature>   
+        </config-file>
+        <source-file src="src/android/NativeShare.java" target-dir="src/com/twonott/plugins/native_share/NativeShare" />
+    </platform>
+	
+	<!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+		    <feature name="NativeShare">
+			    <param name="ios-package" value="CDVNativeShare"/>
+		    </feature>
+        </config-file>
+
+	    <header-file src="src/ios/CDVNativeShare.h" />
+	    <source-file src="src/ios/CDVNativeShare.m" />
+		<framework src="SystemConfiguration.framework" weak="true" />
+	    
+    </platform>
+
+</plugin>

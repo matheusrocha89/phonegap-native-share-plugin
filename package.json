@@ -1,0 +1,12 @@
+{
+    "version": "1.0",
+    "name": "com.twonott.plugins.native_share",
+    "cordova_name": "NativeShare",
+    "description": "Plugin to call the native share feature of Android and iOS",
+    "license": "Apache 2.0",
+    "keywords": [
+        "share",
+        "share, native share"
+    ],
+    "engines": []
+}
